@@ -1,4 +1,4 @@
-package br.com.deisesales.exercise;
+package br.com.deisesales.exercise.entities;
 
 public class Employee {
     private Integer id;
@@ -38,8 +38,12 @@ public class Employee {
         this.salary = salary;
     }
 
+    public void increaseSalary(Double percentage) {
+         salary += salary * percentage / 100;
+    }
+
     @Override
     public String toString() {
-        return "Employee {id = " + id + ", name = " + name + ", salary = " + salary + "}";
+        return "Employee {id = " + id + ", name = " + name + ", salary = " + String.format("%.2f", salary) + "}";
     }
 }
